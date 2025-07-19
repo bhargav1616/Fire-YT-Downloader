@@ -3,6 +3,10 @@ import yt_dlp
 import os
 import shutil
 
+with open('cookies.txt', 'w') as f:
+    f.write(os.getenv('COOKIES'))
+
+
 app = Flask(__name__)
 
 DOWNLOAD_DIR = os.path.join(os.getcwd(), 'downloads')
