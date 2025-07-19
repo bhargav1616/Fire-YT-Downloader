@@ -57,7 +57,8 @@ def download():
         ydl_opts = {
             'format': format_id + '+bestaudio/best',  # merge video+audio if separate
             'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
-            'merge_output_format': 'mp4'
+            'merge_output_format': 'mp4',
+            'cookiefile': os.path.join(os.getcwd(), 'cookies.txt'),
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
